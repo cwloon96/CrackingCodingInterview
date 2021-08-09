@@ -72,20 +72,25 @@
                 }
             }
 
+            // if any zero in first column of row, update other column
             for (int row = 1; row < matrix.GetLength(0); row++)
                 if (matrix[row, 0] == 0)
                     for (int col = 1; col < matrix.GetLength(1); col++)
                         matrix[row, col] = 0;
 
+            // if any zero in first row of column, update other row
             for (int col = 1; col < matrix.GetLength(1); col++)
                 if (matrix[0, col] == 0)
                     for (int row = 1; row < matrix.GetLength(0); row++)
                         matrix[row, col] = 0;
-
+                
+            // if first row any zero, update all column in first row
             if (firstRowHasZero)
                 for (int col = 0; col < matrix.GetLength(1); col++)
                     matrix[0, col] = 0;
 
+
+            // if first column any zero, update all row in first column
             if (firstColHasZero)
                 for (int row = 0; row < matrix.GetLength(0); row++)
                     matrix[row, 0] = 0;
