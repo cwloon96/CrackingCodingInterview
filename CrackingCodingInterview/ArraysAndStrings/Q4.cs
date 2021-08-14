@@ -50,8 +50,6 @@
             return oddCount <= 1;
         }
 
-
-        // enhanced version of S1
         public bool PalindromePermutationS3(string str)
         {
             int checker = 0;
