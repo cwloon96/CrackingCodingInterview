@@ -11,7 +11,7 @@
                 return false;
 
             bool changed = false;
-            for (int i = 0, j = 0; i < s1.Length; i++, j++)
+            for (int i = 0, j = 0; i < s1.Length && j < s2.Length; j++)
             {
                 if (s1[i] != s2[j])
                 {
@@ -20,8 +20,14 @@
 
                     changed = true;
 
-                    if (s1.Length != s2.Length)
-                        j++;
+                    // if both same length, it is an edit and continue to compare the next one
+                    // else it is an delete, only increase j to compare the next one
+                    if (s1.Length == s2.Length)
+                        i++;
+                }
+                else
+                {
+                    i++;
                 }
             }
 

@@ -9,7 +9,7 @@ namespace CrackingCodingInterview.Test.ArraysAndStrings
         [TestMethod]
         public void S1ShouldBeTrueWithOneModification()
         {
-            Assert.AreEqual(true, new Q5().OneAwayS1("pale", "pall"));
+            Assert.AreEqual(true, new Q5().OneAwayS1("pale", "kale"));
         }
 
         [TestMethod]
@@ -40,6 +40,12 @@ namespace CrackingCodingInterview.Test.ArraysAndStrings
         public void S1ShouldBeFalseWithTwoInsertion()
         {
             Assert.AreEqual(false, new Q5().OneAwayS1("pe", "pale"));
+        }
+
+        [TestMethod]
+        public void S1ShouldBeFalseWithDeletionAndModification()
+        {
+            Assert.AreEqual(false, new Q5().OneAwayS1("pale", "lkale"));
         }
     }
 }
